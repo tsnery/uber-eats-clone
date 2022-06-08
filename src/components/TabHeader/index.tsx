@@ -1,7 +1,7 @@
 import MaskedView from '@react-native-masked-view/masked-view';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import Animated from 'react-native-reanimated';
+import Animated, {useAnimatedStyle} from 'react-native-reanimated';
 import {Tabs} from '../Tabs';
 import {TTabHeaderProps} from './types';
 
@@ -10,14 +10,16 @@ export function TabHeader({tabs, opacityAnimationStyle}: TTabHeaderProps) {
     new Array(tabs.length).fill(0),
   );
 
-  const backgroundNodeActive = {
-    borderRadius: 24,
-    backgroundColor: 'transparent',
-    width: measurements[0],
-    flex: 1,
-  };
+  const backgroundNodeActive = useAnimatedStyle(() => {
+    return {
+      borderRadius: 24,
+      backgroundColor: 'transparent',
+      width: measurements[1],
+      flex: 1,
+    };
+  }, [measurements]);
 
-  const maskElement = <Animated.View {...{style: backgroundNodeActive}} />;
+  const maskElement = <Animated.View style={backgroundNodeActive} />;
 
   return (
     <Animated.View style={[styles.container, opacityAnimationStyle]}>

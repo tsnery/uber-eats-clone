@@ -73,7 +73,7 @@ export function Header({tabs, scrollY}: THeaderProps) {
         </Animated.Text>
         <Icon name="heart" size={ICON_SIZE} color="white" />
       </View>
-      <TabHeader {...{tabs, opacityAnimationStyle}} />
+      <TabHeader {...{tabs, opacityAnimationStyle, scrollY}} />
     </View>
   );
 }
