@@ -1,12 +1,18 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, Text} from 'react-native';
+import { Content } from './components/Content';
+import { Header } from './components/Header';
 import {HeaderImage} from './components/HeaderImage';
 
 const App = () => {
+
   return (
     <SafeAreaView style={styles.container}>
       <HeaderImage />
-      <Text>Teste</Text>
+      <ScrollView>
+        <Content/>
+      </ScrollView>
+      <Header/>
     </SafeAreaView>
   );
 };
