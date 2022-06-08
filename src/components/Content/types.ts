@@ -1,11 +1,7 @@
-import Animated from "react-native-reanimated"
-
-export type TabModel = {
-  name: string;
-  anchor: number;
-}
+import {SharedValue} from 'react-native-reanimated';
+import {TDefaultTabs} from '../mock/defaultTabs';
 
 export type TContentProps = {
-  y: Animated.Node<number>
-  onMeasurement: (index: number, tab: TabModel) => void
-}
+  onMeasurement: (index: number, tab: TDefaultTabs) => void;
+  scrollY: SharedValue<number>;
+};
