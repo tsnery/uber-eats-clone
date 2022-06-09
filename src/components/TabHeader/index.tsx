@@ -14,6 +14,7 @@ export function TabHeader({
   tabs,
   opacityAnimationStyle,
   scrollY,
+  scrollViewRef,
 }: TTabHeaderProps) {
   const [measurements, setMeasurements] = React.useState<number[]>(
     new Array(tabs.length).fill(0),
@@ -94,7 +95,15 @@ export function TabHeader({
             },
             translateTabsAnimation,
           ]}>
-          <Tabs active tabs={tabs} />
+          <Tabs
+            active
+            tabs={tabs}
+            onPress={i => {
+              if (scrollViewRef.current) {
+                scrollViewRef.current.scrollTo({y: tabs[i].anchor + 1});
+              }
+            }}
+          />
         </Animated.View>
       </MaskedView>
     </Animated.View>

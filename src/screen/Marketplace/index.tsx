@@ -11,6 +11,7 @@ import {defaultTabs, TDefaultTabs} from '../../components/mock/defaultTabs';
 
 const Marketplace = () => {
   const [tabs, setTabs] = React.useState<TDefaultTabs[]>(defaultTabs);
+  const scrollViewRef = React.useRef<Animated.ScrollView>(null);
   const scrollY = useSharedValue(0);
   const onScroll = useAnimatedScrollHandler({
     onScroll: event => {
@@ -21,6 +22,7 @@ const Marketplace = () => {
     <View style={styles.container}>
       <HeaderImage scrollY={scrollY} />
       <Animated.ScrollView
+        ref={scrollViewRef}
         style={StyleSheet.absoluteFill}
         scrollEventThrottle={1}
         {...{onScroll}}>
@@ -32,7 +34,7 @@ const Marketplace = () => {
           }}
         />
       </Animated.ScrollView>
-      <Header {...{scrollY, tabs}} />
+      <Header {...{scrollY, tabs, scrollViewRef}} />
     </View>
   );
 };

@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {Tab} from '../Tab';
 import {TTabsProps} from './types';
 
-export function Tabs({tabs, active, onMeasurement}: TTabsProps) {
+export function Tabs({tabs, active, onMeasurement, onPress}: TTabsProps) {
   return (
     <View style={styles.overlay}>
       {tabs.map((tab, index) => (
@@ -13,6 +13,7 @@ export function Tabs({tabs, active, onMeasurement}: TTabsProps) {
           }
           key={index}
           tab={tab}
+          onPress={onPress ? onPress.bind(null, index) : undefined}
           color={active ? '#ffffff' : 'black'}
         />
       ))}

@@ -16,7 +16,7 @@ const ICON_SIZE = 24;
 const PADDING = 16;
 export const MIN_HEADER_HEIGHT = 45;
 
-export function Header({tabs, scrollY}: THeaderProps) {
+export function Header({tabs, scrollY, scrollViewRef}: THeaderProps) {
   const insets = useSafeAreaInsets();
   const paddingTop = insets.top;
 
@@ -73,7 +73,7 @@ export function Header({tabs, scrollY}: THeaderProps) {
         </Animated.Text>
         <Icon name="heart" size={ICON_SIZE} color="white" />
       </View>
-      <TabHeader {...{tabs, opacityAnimationStyle, scrollY}} />
+      <TabHeader {...{tabs, opacityAnimationStyle, scrollY, scrollViewRef}} />
     </View>
   );
 }

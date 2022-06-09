@@ -3,9 +3,9 @@ import {StyleSheet, Text, View} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import {TTabProps} from './types';
 
-export function Tab({tab, color, onMeasurement}: TTabProps) {
+export function Tab({tab, color, onMeasurement, onPress}: TTabProps) {
   return (
-    <TouchableWithoutFeedback>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View
         style={styles.container}
         onLayout={
