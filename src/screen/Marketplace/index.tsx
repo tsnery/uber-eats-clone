@@ -6,7 +6,7 @@ import { CustomCellRendererComponent } from '../../components/CustomCellRenderer
 import { Header } from '../../components/Header';
 import {HeaderImage} from '../../components/HeaderImage';
 import {ListHeaderComponent} from '../../components/ListHeaderComponent';
-import {menu, TMenu} from '../../components/mock/menu';
+import {menu, TMenu} from '../../mock/menu';
 import {ProductCard} from '../../components/ProductCard';
 import { useTabs } from '../../hooks/useTabs';
 

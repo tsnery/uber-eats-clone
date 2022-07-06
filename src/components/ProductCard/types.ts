@@ -1,4 +1,4 @@
-import {TMenu} from '../mock/menu';
+import {TMenu} from '../../mock/menu';
 
 export type TProductCardProps = {
   product: TMenu;

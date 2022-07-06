@@ -1,6 +1,6 @@
 import create from 'zustand';
 import {devtools} from 'zustand/middleware';
-import {TDefaultTabs} from '../components/mock/defaultTabs';
+import {TDefaultTabs} from '../mock/defaultTabs';
 
 interface TabsState {
   tabs: TDefaultTabs[];

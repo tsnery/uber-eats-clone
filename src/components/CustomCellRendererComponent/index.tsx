@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {CellContainer} from '@shopify/flash-list';
 import {View} from 'react-native';
-import {TDefaultTabs} from '../mock/defaultTabs';
+import {TDefaultTabs} from '../../mock/defaultTabs';
 import {useTabs} from '../../hooks/useTabs';
 import {HEADER_IMAGE_HEIGHT} from '../HeaderImage';
 import {MIN_HEADER_HEIGHT} from '../Header';

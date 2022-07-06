@@ -1,4 +1,4 @@
-import {TDefaultTabs} from '../mock/defaultTabs';
+import {TDefaultTabs} from '../../mock/defaultTabs';
 
 export type TTabsProps = {
   tabs: TDefaultTabs[];
