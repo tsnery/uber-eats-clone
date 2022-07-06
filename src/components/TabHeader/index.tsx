@@ -100,7 +100,11 @@ export function TabHeader({
             tabs={tabs}
             onPress={i => {
               if (scrollViewRef.current) {
-                scrollViewRef.current.scrollTo({y: tabs[i].anchor + 1});
+                scrollViewRef.current.scrollToOffset({
+                  offset: tabs[i].anchor + 1,
+                  animated: true,
+                });
+                // scrollViewRef.current.scrollTo({y: tabs[i].anchor + 1});
               }
             }}
           />

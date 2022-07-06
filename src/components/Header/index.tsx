@@ -8,6 +8,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
+import {useTabs} from '../../hooks/useTabs';
 import {HEADER_IMAGE_HEIGHT} from '../HeaderImage';
 import {TabHeader} from '../TabHeader';
 import {THeaderProps} from './types';
@@ -16,7 +17,9 @@ const ICON_SIZE = 24;
 const PADDING = 16;
 export const MIN_HEADER_HEIGHT = 45;
 
-export function Header({tabs, scrollY, scrollViewRef}: THeaderProps) {
+export function Header({scrollY, scrollViewRef}: THeaderProps) {
+  const tabs = useTabs(store => store.tabs);
+
   const insets = useSafeAreaInsets();
   const paddingTop = insets.top;
 
@@ -73,7 +76,9 @@ export function Header({tabs, scrollY, scrollViewRef}: THeaderProps) {
         </Animated.Text>
         <Icon name="heart" size={ICON_SIZE} color="white" />
       </View>
-      <TabHeader {...{tabs, opacityAnimationStyle, scrollY, scrollViewRef}} />
+      {tabs.length > 1 && (
+        <TabHeader {...{opacityAnimationStyle, scrollY, scrollViewRef, tabs}} />
+      )}
     </View>
   );
 }

@@ -1,10 +1,10 @@
 // import {RefObject} from 'react';
+import {FlashList} from '@shopify/flash-list';
 import {RefObject} from 'react';
-import Animated, {SharedValue} from 'react-native-reanimated';
-import {TDefaultTabs} from '../mock/defaultTabs';
+import {SharedValue} from 'react-native-reanimated';
+import {TMenu} from '../mock/menu';
 
 export type THeaderProps = {
   scrollY: SharedValue<number>;
-  tabs: TDefaultTabs[];
-  scrollViewRef: RefObject<Animated.ScrollView>;
+  scrollViewRef: RefObject<FlashList<TMenu>>;
 };
